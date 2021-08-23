@@ -14,7 +14,7 @@ const $iconoBurguer = document.querySelector(".iconoBurguer"),
     document.styleSheets[0].insertRule(nuevaListaMercurio, document.styleSheets[0].cssRules.length)
     console.log(document.styleSheets[0].cssRules)*/
 
-    console.log($listaDatoA)
+    console.log($enlacePlaneta)
 
 document.addEventListener("click", e => {
     if (e.target.matches(".iconoBurguer")) return $navPlanetas.classList.toggle("active1")
@@ -54,7 +54,7 @@ document.addEventListener("click", e => {
 
 const traerDatos = async () => {
     try {
-        let response = await fetch("/data.json");
+        let response = await fetch("./data.json");
         let data = await response.json();
 
         mostrarDatos(data);
