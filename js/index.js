@@ -54,7 +54,7 @@ document.addEventListener("click", e => {
 
 const traerDatos = async () => {
     try {
-        let response = await fetch("./data.json");
+        let response = await fetch("/js/data.json");
         let data = await response.json();
 
         mostrarDatos(data);
@@ -73,7 +73,7 @@ function mostrarDatos(datos) {
             indice = url.indexOf("."),
             nombre = url.substring(1, indice);
         let $clone = document.importNode($templateDos, true);
-        if (nombre === data.name.toLowerCase()) {
+        if (nombre === data.name.toLowerCase() || mercury === data.name.toLowerCase()) {
             borde(data.name.toLowerCase())
             document.querySelector(".imagenPlaneta").src = data.images.planet;
             document.querySelector(".imagenPlaneta").alt = data.name;
