@@ -14,6 +14,7 @@ const $iconoBurguer = document.querySelector(".iconoBurguer"),
     document.styleSheets[0].insertRule(nuevaListaMercurio, document.styleSheets[0].cssRules.length)
     console.log(document.styleSheets[0].cssRules)*/
 
+    let mercury;
     console.log($enlacePlaneta)
 
 document.addEventListener("click", e => {
@@ -54,7 +55,7 @@ document.addEventListener("click", e => {
 
 const traerDatos = async () => {
     try {
-        let response = await fetch("/js/data.json");
+        let response = await fetch("/docs/js/data.json");
         let data = await response.json();
 
         mostrarDatos(data);
