@@ -14,8 +14,7 @@ const $iconoBurguer = document.querySelector(".iconoBurguer"),
     document.styleSheets[0].insertRule(nuevaListaMercurio, document.styleSheets[0].cssRules.length)
     console.log(document.styleSheets[0].cssRules)*/
 
-    let mercury;
-    console.log($enlacePlaneta)
+    
 
 document.addEventListener("click", e => {
     if (e.target.matches(".iconoBurguer")) return $navPlanetas.classList.toggle("active1")
@@ -55,7 +54,7 @@ document.addEventListener("click", e => {
 
 const traerDatos = async () => {
     try {
-        let response = await fetch("/docs/js/data.json");
+        let response = await fetch("/data.json");
         let data = await response.json();
 
         mostrarDatos(data);
@@ -66,15 +65,14 @@ const traerDatos = async () => {
 
 document.addEventListener("DOMContentLoaded", traerDatos);
 
-
-
 function mostrarDatos(datos) {
     datos.forEach(data => {
         let url = location.pathname,
             indice = url.indexOf("."),
-            nombre = url.substring(1, indice);
+            nombre = url.substring(6, indice);
+            console.log(document.querySelector(".imagenPlaneta"))
         let $clone = document.importNode($templateDos, true);
-        if (nombre === data.name.toLowerCase() || mercury === data.name.toLowerCase()) {
+        if (nombre === data.name.toLowerCase() || "mercury" === data.name.toLowerCase()) {
             borde(data.name.toLowerCase())
             document.querySelector(".imagenPlaneta").src = data.images.planet;
             document.querySelector(".imagenPlaneta").alt = data.name;

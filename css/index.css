@@ -18,7 +18,7 @@ body {
     /*font-family: 'Antonio', sans-serif;
     font-family: 'Spartan', sans-serif;*/
     background-color: #070724;
-    background-image: url("/assets/background-stars.svg");
+    background-image: url("/docs/assets/background-stars.svg");
     background-repeat: repeat;
     /*background-position: 50vw left 0vh bottom;*/
     padding: 0%;
@@ -89,7 +89,7 @@ body {
     padding: 20px 0px; 
 }
 .enlacePlaneta::after {
-    content: url("/assets/icon-chevron.svg");
+    content: url("/docs/assets/icon-chevron.svg");
     position: absolute;
     right: 0px;
     top: 18px;
