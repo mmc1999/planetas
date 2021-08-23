@@ -70,9 +70,9 @@ function mostrarDatos(datos) {
         let url = location.pathname,
             indice = url.indexOf("."),
             nombre = url.substring(6, indice);
-            console.log(document.querySelector(".imagenPlaneta"))
+
         let $clone = document.importNode($templateDos, true);
-        if (nombre === data.name.toLowerCase() || "mercury" === data.name.toLowerCase()) {
+        if (nombre === data.name.toLowerCase() ) {
             borde(data.name.toLowerCase())
             document.querySelector(".imagenPlaneta").src = data.images.planet;
             document.querySelector(".imagenPlaneta").alt = data.name;
@@ -93,7 +93,29 @@ function mostrarDatos(datos) {
             $clone.querySelector(".radius").textContent = data.radius;
             $clone.querySelector(".grados").textContent = data.temperature;
             $fragment.appendChild($clone);
-        }
+        }/*
+        if("mercury" === data.name.toLowerCase()) {
+            borde(data.name.toLowerCase())
+            document.querySelector(".imagenPlaneta").src = data.images.planet;
+            document.querySelector(".imagenPlaneta").alt = data.name;
+            document.querySelector(".imagenPlanetaStructure").src = data.images.internal;
+            document.querySelector(".imagenPlanetaStructure").alt = `Imagen de la estructura interna de ${data.name}`;
+            document.querySelector(".imagenPlaneta2").src = data.images.planet;
+            document.querySelector(".imagenPlanetaInternal").src = data.images.geology;
+            document.querySelector(".imagenPlanetaInternal").alt = `Imagen de la geologia de ${data.name}`;
+            document.querySelector(".nombrePlaneta").textContent = data.name;
+            document.querySelector(".infoOverview").textContent = data.overview.content;
+            document.querySelector(".infoStructure").textContent = data.structure.content;
+            document.querySelector(".infoSurface").textContent = data.geology.content;
+            document.querySelector(".wikipediaOverview").href = data.overview.source;
+            document.querySelector(".wikipediaStructure").href = data.structure.source;
+            document.querySelector(".wikipediaSurface").href = data.geology.source;
+            $clone.querySelector(".TiempoRotacion").textContent = data.rotation;
+            $clone.querySelector(".tiempoRevolucion").textContent = data.revolution;
+            $clone.querySelector(".radius").textContent = data.radius;
+            $clone.querySelector(".grados").textContent = data.temperature;
+            $fragment.appendChild($clone);
+        }*/
     }) //TERMINA EL ARRAY
     $acaTemplateDos.appendChild($fragment)
 }
