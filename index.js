@@ -14,7 +14,7 @@ const $iconoBurguer = document.querySelector(".iconoBurguer"),
     document.styleSheets[0].insertRule(nuevaListaMercurio, document.styleSheets[0].cssRules.length)
     console.log(document.styleSheets[0].cssRules)*/
 
-    
+    console.log("arranca?")
 
 document.addEventListener("click", e => {
     if (e.target.matches(".iconoBurguer")) return $navPlanetas.classList.toggle("active1")
@@ -70,7 +70,7 @@ function mostrarDatos(datos) {
         let url = location.pathname,
             indice = url.indexOf("."),
             nombre = url.substring(6, indice);
-
+            console.log("arranca?")
         let $clone = document.importNode($templateDos, true);
         if (nombre === data.name.toLowerCase() ) {
             borde(data.name.toLowerCase())
