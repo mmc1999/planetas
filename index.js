@@ -14,7 +14,7 @@ const $iconoBurguer = document.querySelector(".iconoBurguer"),
     document.styleSheets[0].insertRule(nuevaListaMercurio, document.styleSheets[0].cssRules.length)
     console.log(document.styleSheets[0].cssRules)*/
 
-    console.log("arranca?")
+
 
 document.addEventListener("click", e => {
     if (e.target.matches(".iconoBurguer")) return $navPlanetas.classList.toggle("active1")
@@ -70,9 +70,9 @@ function mostrarDatos(datos) {
         let url = location.pathname,
             indice = url.indexOf("."),
             nombre = url.substring(6, indice);
-            console.log("arranca?")
+
         let $clone = document.importNode($templateDos, true);
-        if (nombre === data.name.toLowerCase() ) {
+        if (nombre === data.name.toLowerCase() || "mercury" === data.name.toLowerCase()) {
             borde(data.name.toLowerCase())
             document.querySelector(".imagenPlaneta").src = data.images.planet;
             document.querySelector(".imagenPlaneta").alt = data.name;
@@ -99,41 +99,23 @@ function mostrarDatos(datos) {
 }
 
 
-const borde = (nombre) => {
-    if($enlacePlaneta[0].outerText.toLowerCase() === nombre) {
-        let nuevaLista = ".listaDato:active { border: none; background-color: #419EBB; mix-blend-mode: normal; color: white; }";
-        document.styleSheets[0].insertRule(nuevaLista, document.styleSheets[0].cssRules.length)
-    }
-    if($enlacePlaneta[1].outerText.toLowerCase() === nombre) {
-        let nuevaLista = ".listaDato:active { border: none; background-color: #EDA249; mix-blend-mode: normal; color: white; }";
-        document.styleSheets[0].insertRule(nuevaLista, document.styleSheets[0].cssRules.length)
-    }
-    if($enlacePlaneta[2].outerText.toLowerCase() === nombre) {
-        let nuevaLista = ".listaDato:active { border: none; background-color: #6D2ED5; mix-blend-mode: normal; color: white; }";
-        document.styleSheets[0].insertRule(nuevaLista, document.styleSheets[0].cssRules.length)
-    }
-    if($enlacePlaneta[3].outerText.toLowerCase() === nombre) {
-        let nuevaLista = ".listaDato:active { border: none; background-color: #D14C32; mix-blend-mode: normal; color: white; }";
-        document.styleSheets[0].insertRule(nuevaLista, document.styleSheets[0].cssRules.length)
-    }
-    if($enlacePlaneta[4].outerText.toLowerCase() === nombre) {
-        let nuevaLista = ".listaDato:active { border: none; background-color: #D83A34; mix-blend-mode: normal; color: white; }";
-        document.styleSheets[0].insertRule(nuevaLista, document.styleSheets[0].cssRules.length)
-    }
-    if($enlacePlaneta[5].outerText.toLowerCase() === nombre) {
-        let nuevaLista = ".listaDato:active { border: none; background-color: #CD5120; mix-blend-mode: normal; color: white; }";
-        document.styleSheets[0].insertRule(nuevaLista, document.styleSheets[0].cssRules.length)
-    }
-    if($enlacePlaneta[6].outerText.toLowerCase() === nombre) {
-        let nuevaLista = ".listaDato:active { border: none; background-color: #1EC1A2; mix-blend-mode: normal; color: white; }";
-        document.styleSheets[0].insertRule(nuevaLista, document.styleSheets[0].cssRules.length)
-    }
-    if($enlacePlaneta[7].outerText.toLowerCase() === nombre) {
-        let nuevaLista = ".listaDato:active { border: none; background-color: #2D68F0; mix-blend-mode: normal; color: white; }";
+const borde = (nombre1) => {
+    ponerClase(0, "419EBB", nombre1)
+    ponerClase(1, "EDA249", nombre1)
+    ponerClase(2, "6D2ED5", nombre1)
+    ponerClase(3, "D14C32", nombre1)
+    ponerClase(4, "D83A34", nombre1)
+    ponerClase(5, "CD5120", nombre1)
+    ponerClase(6, "1EC1A2", nombre1)
+    ponerClase(7, "2D68F0", nombre1)
+}
+
+const ponerClase = (indice, clase, nombre) => {
+    if($enlacePlaneta[indice].outerText.toLowerCase() === nombre) {
+        let nuevaLista = `.listaDato:active { border: none; background-color: #${clase}; mix-blend-mode: normal; color: white; }`;
         document.styleSheets[0].insertRule(nuevaLista, document.styleSheets[0].cssRules.length)
     }
 }
-
 
 const removerClase = (array) => {
     for(let i = 0;i<array.length;i++) {
