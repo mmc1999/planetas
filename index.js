@@ -70,7 +70,7 @@ function mostrarDatos(datos) {
         let url = location.pathname,
             indice = url.indexOf("."),
             nombre = url.substring(6, indice);
-
+        
         let $clone = document.importNode($templateDos, true);
         if (nombre === data.name.toLowerCase() || "mercury" === data.name.toLowerCase()) {
             borde(data.name.toLowerCase())
