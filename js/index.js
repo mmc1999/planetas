@@ -93,29 +93,7 @@ function mostrarDatos(datos) {
             $clone.querySelector(".radius").textContent = data.radius;
             $clone.querySelector(".grados").textContent = data.temperature;
             $fragment.appendChild($clone);
-        }/*
-        if("mercury" === data.name.toLowerCase()) {
-            borde(data.name.toLowerCase())
-            document.querySelector(".imagenPlaneta").src = data.images.planet;
-            document.querySelector(".imagenPlaneta").alt = data.name;
-            document.querySelector(".imagenPlanetaStructure").src = data.images.internal;
-            document.querySelector(".imagenPlanetaStructure").alt = `Imagen de la estructura interna de ${data.name}`;
-            document.querySelector(".imagenPlaneta2").src = data.images.planet;
-            document.querySelector(".imagenPlanetaInternal").src = data.images.geology;
-            document.querySelector(".imagenPlanetaInternal").alt = `Imagen de la geologia de ${data.name}`;
-            document.querySelector(".nombrePlaneta").textContent = data.name;
-            document.querySelector(".infoOverview").textContent = data.overview.content;
-            document.querySelector(".infoStructure").textContent = data.structure.content;
-            document.querySelector(".infoSurface").textContent = data.geology.content;
-            document.querySelector(".wikipediaOverview").href = data.overview.source;
-            document.querySelector(".wikipediaStructure").href = data.structure.source;
-            document.querySelector(".wikipediaSurface").href = data.geology.source;
-            $clone.querySelector(".TiempoRotacion").textContent = data.rotation;
-            $clone.querySelector(".tiempoRevolucion").textContent = data.revolution;
-            $clone.querySelector(".radius").textContent = data.radius;
-            $clone.querySelector(".grados").textContent = data.temperature;
-            $fragment.appendChild($clone);
-        }*/
+        }
     }) //TERMINA EL ARRAY
     $acaTemplateDos.appendChild($fragment)
 }
