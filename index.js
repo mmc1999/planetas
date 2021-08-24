@@ -54,7 +54,7 @@ document.addEventListener("click", e => {
 
 const traerDatos = async () => {
     try {
-        let response = await fetch("../data.json");
+        let response = await fetch("./data.json");
         let data = await response.json();
 
         mostrarDatos(data);
