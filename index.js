@@ -114,7 +114,7 @@ const pintarDataJson = (data) => {
 
 const ponerClase = (indice, clase, nombre) => {
     if($enlacePlaneta[indice].outerText.toLowerCase() === nombre) {
-        let nuevaListaDesktop = `.listaDato:active {border: none; background-color: #${clase}; mix-blend-mode: normal; color: white;}`;
+        let nuevaListaDesktop = `.listaDato:focus {border: none; background-color: #${clase}; mix-blend-mode: normal; color: white;}`;
         let nuevaListaTablet = `.listaDato:hover {border: none; background-color: #${clase}; mix-blend-mode: normal; color: white;}`;
         let nuevaListaMobile = `.listaDato:hover {opacity: 1; border-bottom: 3px solid #${clase}; border-radius: 0px; `;
         let nuevaListaDesktop2 = `.enlacePlaneta:hover { color: white; border-top: 3px solid #${clase}; }`
