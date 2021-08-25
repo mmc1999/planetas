@@ -470,6 +470,7 @@ img.imagenPlaneta2 {
     .enlacePlaneta:hover {
         color: white;
         border-top: 3px solid white;
+        padding-top: 17px;
     }
     
     .spanCircle {
