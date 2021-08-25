@@ -9,14 +9,7 @@ const $iconoBurguer = document.querySelector(".iconoBurguer"),
     $enlacePlaneta = document.querySelectorAll(".enlacePlaneta"),
     $listaDato = document.querySelectorAll(".listaDato"),
     $listaDatoA = document.querySelectorAll(".enlaceMalo");
-    //accederHoverListaDato = document.styleSheets[0].cssRules[43].cssRules[19]
-    /*let nuevaListaMercurio = ".listaDato:hover { border: none; background-color: #DEF4FC; mix-blend-mode: normal; color: white; }";
-    document.styleSheets[0].insertRule(nuevaListaMercurio, document.styleSheets[0].cssRules.length)
-    console.log(document.styleSheets[0].cssRules)*/
-
-
-
-
+    
 document.addEventListener("click", e => {
     if (e.target.matches(".iconoBurguer")) return $navPlanetas.classList.toggle("active1")
 
@@ -67,34 +60,19 @@ const traerDatos = async () => {
 document.addEventListener("DOMContentLoaded", traerDatos);
 
 
-
-
 function mostrarDatos(datos) {
     
     datos.forEach((data) => {
         let url = location.pathname,
             indice = url.indexOf("."),
             nombre = url.substring(1, indice);
-        console.log(nombre)
+
         if(nombre === data.name.toLowerCase()) {
             pintarDataJson(data);
-            //ESTA ES LA MEJOR MANERA PERO ME FALTA MERCURIO QUE NO SE COMO TRAERLO SIN QUE DESPUES ME LO PINTE EN LAS OTRAS HOJAS HTML
         } else if("mercury" === data.name.toLowerCase()) {
             pintarDataJson(data);
         } 
-            //ESTA ES LA MEJOR MANERA PERO ME FALTA MERCURIO QUE NO SE COMO TRAERLO SIN QUE DESPUES ME LO PINTE EN LAS OTRAS HOJAS HTML
-        
-        /*for (let i = 0; i < datos.length; i++) {
-            if("Mercury" === datos[i].name) {
-                pintarDataJson(datos, i);
-                break
-            } 
-            if("Venus" === datos[i].name) {
-                pintarDataJson(datos, i)
-            } 
-        }*/
-     //TERMINA EL ARRAY
-    $acaTemplateDos.appendChild($fragment)
+        $acaTemplateDos.appendChild($fragment)
     })
 }
 
@@ -132,35 +110,22 @@ const pintarDataJson = (data) => {
     $clone.querySelector(".radius").textContent = data.radius;
     $clone.querySelector(".grados").textContent = data.temperature;
     $fragment.appendChild($clone);
-    /*let $clone = document.importNode($templateDos, true);
-    borde(data[i].name)
-    document.querySelector(".imagenPlaneta").src = data[i].images.planet;
-    document.querySelector(".imagenPlaneta").alt = data[i].name;
-    document.querySelector(".imagenPlanetaStructure").src = data[i].images.internal;
-    document.querySelector(".imagenPlanetaStructure").alt = `Imagen de la estructura interna de ${data[i].name}`;
-    document.querySelector(".imagenPlaneta2").src = data[i].images.planet;
-    document.querySelector(".imagenPlanetaInternal").src = data[i].images.geology;
-    document.querySelector(".imagenPlanetaInternal").alt = `Imagen de la geologia de ${data[i].name}`;
-    document.querySelector(".nombrePlaneta").textContent = data[i].name;
-    document.querySelector(".infoOverview").textContent = data[i].overview.content;
-    document.querySelector(".infoStructure").textContent = data[i].structure.content;
-    document.querySelector(".infoSurface").textContent = data[i].geology.content;
-    document.querySelector(".wikipediaOverview").href = data[i].overview.source;
-    document.querySelector(".wikipediaStructure").href = data[i].structure.source;
-    document.querySelector(".wikipediaSurface").href = data[i].geology.source;
-    $clone.querySelector(".TiempoRotacion").textContent = data[i].rotation;
-    $clone.querySelector(".tiempoRevolucion").textContent = data[i].revolution;
-    $clone.querySelector(".radius").textContent = data[i].radius;
-    $clone.querySelector(".grados").textContent = data[i].temperature;
-    $fragment.appendChild($clone);*/
 }
 
 const ponerClase = (indice, clase, nombre) => {
     if($enlacePlaneta[indice].outerText.toLowerCase() === nombre) {
-        let nuevaLista = `.listaDato:active { border: none; background-color: #${clase}; mix-blend-mode: normal; color: white; }`;
-        document.styleSheets[0].insertRule(nuevaLista, document.styleSheets[0].cssRules.length)
+        let nuevaListaDesktop = `.listaDato:active {border: none; background-color: #${clase}; mix-blend-mode: normal; color: white;}`;
+        let nuevaListaTablet = `.listaDato:hover {border: none; background-color: #${clase}; mix-blend-mode: normal; color: white;}`;
+        let nuevaListaMobile = `.listaDato:hover {opacity: 1; border-bottom: 3px solid #${clase}; border-radius: 0px; `;
+        let nuevaListaDesktop2 = `.enlacePlaneta:hover { color: white; border-top: 3px solid #${clase}; }`
+        document.styleSheets[0].cssRules[3].insertRule(nuevaListaMobile, document.styleSheets[0].cssRules[3].cssRules.length)
+        document.styleSheets[0].cssRules[4].insertRule(nuevaListaTablet, document.styleSheets[0].cssRules[4].cssRules.length)
+        document.styleSheets[0].cssRules[5].insertRule(nuevaListaDesktop, document.styleSheets[0].cssRules[5].cssRules.length)
+        document.styleSheets[0].cssRules[5].insertRule(nuevaListaDesktop2, document.styleSheets[0].cssRules[5].cssRules.length)
     }
 }
+
+console.log(document.styleSheets[0].cssRules[5])
 
 const removerClase = (array) => {
     for(let i = 0;i<array.length;i++) {

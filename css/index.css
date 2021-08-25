@@ -14,6 +14,9 @@ html {
 *, *::after, *::before {
     box-sizing: inherit;
 }
+@media screen and (min-width:220px) {
+    
+
 body {
     /*font-family: 'Antonio', sans-serif;
     font-family: 'Spartan', sans-serif;*/
@@ -147,7 +150,8 @@ body {
 }
 .listaDato {
     font-family: 'Spartan', sans-serif;
-    
+    color: white;
+    opacity: 0.5;
     font-weight: 700;
     font-size: 9px;
     list-style: none;
@@ -155,8 +159,8 @@ body {
 }
 
 .listaDato:hover {
-    color: white;
-    border-bottom: 3px solid transparent;
+    opacity: 1;
+    border-bottom: 3px solid;
     border-radius: 0;
     border-bottom-color: rgb(237, 162, 73);
 }
@@ -180,12 +184,12 @@ body {
     justify-content: center;
     align-items: center;    
 }
-.sectionImagenes img {
+/*.sectionImagenes img {
     margin-top: 150px;
     margin-bottom: 20px;
     max-width: 30%;
     height: auto;
-}
+}*/
 .informacion {
     font-size: 11px;
     font-family: 'Spartan', sans-serif;
@@ -208,17 +212,24 @@ body {
     font-weight:700;
     display: none;
 }
+.imagenPlaneta, .imagenPlanetaStructure {
+    margin-top: 100px;
+
+    max-width: 80%;
+}
 img.busquedaIcono {
     margin: 0%;
 }
 img.imagenPlaneta2 {
     margin-top: 100px;
     margin-bottom: 100px;
+    max-width: 80%;
 }
 .sectionImagenes .imagenPlanetaInternal {
-    margin-top: 180px;
+    margin-top: 70%;
     margin-bottom: 10px;
     position: absolute;
+    max-width: 30%;
 }
 .articleInfoEspecifica {
     padding: 20px;
@@ -252,7 +263,7 @@ img.imagenPlaneta2 {
 .numerosDato {
     display: none;
 }
-
+}
 /*---------------------------------------------------FIN DEL MODO MOBILE----------------------------------------*/
 /*---------------------------------------------------FIN DEL MODO MOBILE----------------------------------------*/
 /*---------------------------------------------------FIN DEL MODO MOBILE----------------------------------------*/
@@ -348,6 +359,17 @@ img.imagenPlaneta2 {
         opacity: 0.6;
         margin-right: 8px;
         margin-left: 15px;
+    }
+    .imagenPlaneta, .imagenPlanetaStructure {
+        margin-top: 50px;
+        max-width: 50%;
+    }
+    .sectionImagenes .imagenPlanetaInternal {
+        max-width: 20%;
+        margin-top: 48%;
+    }
+    .sectionImagenes .imagenPlaneta2  {
+        max-width: 50%;
     }
     .articleInfo {
         display: flex;
@@ -447,12 +469,9 @@ img.imagenPlaneta2 {
     }
     .enlacePlaneta:hover {
         color: white;
+        border-top: 3px solid white;
     }
-    /*
-    .enlacePlaneta::after {
-        content: "";
-    }
-    */
+    
     .spanCircle {
         display: none;
     }
@@ -463,16 +482,19 @@ img.imagenPlaneta2 {
         display: grid;
         grid-template-columns: 60% 40%;
     }
-    .sectionImagenes .imagenes {
-        max-width:  initial;
-    }
-    img.imagenPlaneta2 {
-        margin-top: -70px;
-        margin-bottom: 100px;
-    }
     .articleInfo {
         display: flex;
         flex-direction: column-reverse;
+    }
+
+    .sectionImagenes .imagenPlanetaInternal {
+        max-width: 20%;
+        margin-top: 40%;
+    }
+    .sectionImagenes .imagenPlaneta2  {
+        margin-top: 30px;
+        margin-bottom: 100px;
+        max-width: 100%;
     }
     .sectionInfo {
         display: flex;
