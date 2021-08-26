@@ -190,6 +190,7 @@ body {
     max-width: 30%;
     height: auto;
 }*/
+
 .informacion {
     font-size: 11px;
     font-family: 'Spartan', sans-serif;
@@ -224,12 +225,13 @@ img.imagenPlaneta2 {
     margin-top: 100px;
     margin-bottom: 100px;
     max-width: 80%;
+
 }
 .sectionImagenes .imagenPlanetaInternal {
-    margin-top: 70%;
+    margin-top: 250px;
     margin-bottom: 10px;
     position: absolute;
-    max-width: 30%;
+    max-width: 150px;
 }
 .articleInfoEspecifica {
     padding: 20px;
@@ -259,6 +261,7 @@ img.imagenPlaneta2 {
 }
 .active {
     display: inline;
+    
 }
 .numerosDato {
     display: none;
@@ -365,8 +368,8 @@ img.imagenPlaneta2 {
         max-width: 50%;
     }
     .sectionImagenes .imagenPlanetaInternal {
-        max-width: 20%;
-        margin-top: 48%;
+        max-width: 200px;
+        margin-top: 350px;
     }
     .sectionImagenes .imagenPlaneta2  {
         max-width: 50%;
@@ -471,6 +474,7 @@ img.imagenPlaneta2 {
         color: white;
         border-top: 3px solid white;
         padding-top: 17px;
+        outline: none;
     }
     
     .spanCircle {

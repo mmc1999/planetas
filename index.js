@@ -117,7 +117,7 @@ const ponerClase = (indice, clase, nombre) => {
         let nuevaListaDesktop = `.listaDato:active {border: none; background-color: #${clase}; mix-blend-mode: normal; color: white;}`;
         let nuevaListaTablet = `.listaDato:hover {border: none; background-color: #${clase}; mix-blend-mode: normal; color: white;}`;
         let nuevaListaMobile = `.listaDato:hover {opacity: 1; border-bottom: 3px solid #${clase}; border-radius: 0px; `;
-        let nuevaListaDesktop2 = `.enlacePlaneta:hover { color: white; border-top: 3px solid #${clase}; }`
+        let nuevaListaDesktop2 = `.enlacePlaneta:hover { color: white; border-top: 3px solid #${clase}; outline: none; transition: border-top 1s easy}`
         document.styleSheets[0].cssRules[3].insertRule(nuevaListaMobile, document.styleSheets[0].cssRules[3].cssRules.length)
         document.styleSheets[0].cssRules[4].insertRule(nuevaListaTablet, document.styleSheets[0].cssRules[4].cssRules.length)
         document.styleSheets[0].cssRules[5].insertRule(nuevaListaDesktop, document.styleSheets[0].cssRules[5].cssRules.length)
